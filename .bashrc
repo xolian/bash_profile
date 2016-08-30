@@ -40,11 +40,8 @@ alias c=clear
 export HISTIGNORE="&"
 shopt -s histappend
 
-#if [ -f ~/.colorprompt]; then
-#        . ~/.colorprompt
-#fi
+# web server
+alias webserver="python -m SimpleHTTPServer"
 
-# Source global definitions
-if [ -f /etc/bashrc ]; then
-        . /etc/bashrc
-fi
+# grep with colors
+export GREP_COLORS="ms=01;31:mc=01;31:sl=:cx=:fn=01;33:ln=32:bn=32:se=36"

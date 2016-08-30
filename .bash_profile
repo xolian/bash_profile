@@ -1,23 +1,25 @@
-# .bash_profile
+# .profile
+# Load RVM into a shell session 
+[[ -s "$HOME/.rvm/script/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
 # Get the aliases and functions
-if [ -f ~/.bashrc ]; then
-        . ~/.bashrc
-fi
-PS1='\[\033[0;33m\]\h:\[\033[0m\][\[\033[0;32m\]\w\[\033[0m\]] \$ '
-PS2=$(echo "\033[34;47m>\033[0m")
+[[ -s "$HOME/.bashrc" ]] && source "$HOME/.bashrc"
 
-JAVA_HOME=/opt/java/latest
-JBOSS_HOME=/opt/jboss
-ANT_HOME=/usr/bin/ant
-CLASSPATH=/opt/jdk/lib/tools.jar
+# Get my colors
+[[ -s "$HOME/.colorprompt" ]] && source "$HOME/.colorprompt"
 
-# User specific environment and startup programs
-PAGER="less -X"
-PATH=$PATH:$HOME/bin:$HOME/scripts:$JAVA_HOME:$JAVA_HOME/bin:$JAVA_HOME/jdk/lib/rt.jar:$JBOSS_HOME:$ANT_HOME/bin:$CLASSPATH:/usr:/usr/sbin:/usr/local:/var:/etc:/opt:/usr/local/sshd/bin
+# Setting PATH for Python 2.7
+# The original version is saved in .bash_profile.pysave
+PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}"
 
-export PS1 PS2 PATH PAGER JAVA_HOME JBOSS_HOME ANT_HOME CLASSPATH
-unset USERNAME
+export WORKON_HOME=~Envs
+export VIRTUALENVWRAPPER_PYTHON=$HOME/anaconda/bin/python
+export VIRTUALENVWRAPPER_VIRTUALENV=$HOME/anaconda/bin/virtualenv
+source $HOME/anaconda/bin/virtualenvwrapper.sh
 
-# Set cc compiler to gcc
-alias cc="gcc"
+export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
+export JRE_HOME=$(/usr/libexec/java_home -v 1.8)/jre
+
+PATH=$HOME/.rvm/bin:$HOME/anaconda/bin:$PATH:/usr/local/sbin:/usr/bin:/usr/sbin:/opt/local/bin:/opt/local/sbin:/usr/local/bin:/usr/share
+
+export PATH JAVA_HOME
