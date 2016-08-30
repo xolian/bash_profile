@@ -24,10 +24,7 @@ alias grep="grep --color"
 #export LPDEST="$PRINTER"
 
 # safety net
-alias rm="rm -i"
-alias mv="mv -i"
-alias cp="cp -i"
-alias ls="ls --color=tty"
+alias ls="ls -FHG"
 
 # i clear the screen a lot
 alias c=clear
