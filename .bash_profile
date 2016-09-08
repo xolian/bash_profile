@@ -13,13 +13,13 @@
 PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}"
 
 export WORKON_HOME=~Envs
-export VIRTUALENVWRAPPER_PYTHON=$HOME/anaconda/bin/python
-export VIRTUALENVWRAPPER_VIRTUALENV=$HOME/anaconda/bin/virtualenv
-source $HOME/anaconda/bin/virtualenvwrapper.sh
+export VIRTUALENVWRAPPER_PYTHON=$HOME/anaconda2/bin/python
+export VIRTUALENVWRAPPER_VIRTUALENV=$HOME/anaconda2/bin/virtualenv
+#source $HOME/anaconda/bin/virtualenvwrapper.sh
 
 export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
 export JRE_HOME=$(/usr/libexec/java_home -v 1.8)/jre
 
-PATH=$HOME/.rvm/bin:$HOME/anaconda/bin:$PATH:/usr/local/sbin:/usr/bin:/usr/sbin:/opt/local/bin:/opt/local/sbin:/usr/local/bin:/usr/share
+PATH=$HOME/.rvm/bin:$HOME/anaconda2/bin:$PATH:/usr/local/sbin:/usr/bin:/usr/sbin:/opt/local/bin:/opt/local/sbin:/usr/local/bin:/usr/share
 
 export PATH JAVA_HOME
